@@ -25,3 +25,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+input {
+  @apply p-2 text-black rounded;
+}
+
+button {
+  @apply bg-slate-100 text-gray-900 p-4 rounded-lg;
+}

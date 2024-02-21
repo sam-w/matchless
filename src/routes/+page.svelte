@@ -11,17 +11,17 @@
 <main
   class="relative flex flex-col items-center justify-center min-h-screen py-10"
 >
-  <form method="POST" class="flex flex-col space-y-2">
+  <form method="POST" class="flex flex-col space-y-5">
     <label>
-      Part
+      Part:
       <input name="part_name" type="text">
     </label>
     <label>
-      Part Number
+      Part Number:
       <input name="part_number" type="text">
     </label>
     <label>
-      Contract
+      Contract:
       <input name="contract" type="text">
     </label>
     <button>Submit</button>
