@@ -1,19 +1,10 @@
-<script>
+<script lang="ts">
 	import ms from 'ms';
-	/**
-	 * @type {{id: string, name: string, email: string, image: string, createdAt: string}[]}
-	 */
-	export let users;
-	/**
-	 * @type {number}
-	 */
-	export let duration;
 
-	/**
-	 * @param {string | number | Date} timestamp
-	 * @param {undefined} [timeOnly]
-	 */
-	function timeAgo(timestamp, timeOnly) {
+	export let users: {id: string, name: string, email: string, image: string, createdAt: string}[];
+	export let duration: number;
+
+	function timeAgo(timestamp: string | number | Date, timeOnly: boolean = false) {
 		if (!timestamp) return 'never';
 		return `${ms(Date.now() - new Date(timestamp).getTime())}${timeOnly ? '' : ' ago'}`;
 	}
