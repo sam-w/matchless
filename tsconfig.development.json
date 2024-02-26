@@ -1,0 +1,8 @@
+{
+    "include": [
+        "tailwind.config.ts",
+        "postcss.config.js",
+        "svelte.config.js",
+        ".eslintrc.cjs"
+    ]
+}

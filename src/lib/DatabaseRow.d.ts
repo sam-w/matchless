@@ -5,4 +5,4 @@ export type DatabaseRow = {
     quantity: string;
     contract_number: string;
     part_number: string;
-}
+};

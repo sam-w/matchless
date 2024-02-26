@@ -1,0 +1,21 @@
+{
+    // text editing
+    "files.trimFinalNewlines": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrapColumn": 120,
+    "editor.formatOnSave": true,
+    "files.associations": {
+        ".env*": "properties",
+        "*.css": "tailwindcss"
+    },
+    // svelte
+    "svelte.enable-ts-plugin": true,
+    // eslint
+    "eslint.validate": ["javascript", "svelte"],
+    // prettier
+    "[html][css][javascript][json][typescript][svelte]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.configPath": ".prettierrc"
+}

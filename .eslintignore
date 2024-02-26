@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.template
+
+# Ignore files for yarn
+yarn.lock
