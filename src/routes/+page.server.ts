@@ -1,23 +1,23 @@
-import { runQuery } from '$lib/database/query';
+import { search } from '$lib/database/search';
 
 import type { Actions } from './$types';
 
 export const actions = {
     default: async ({ request }) => {
         const data = await request.formData();
-        const partNameQuery = data.get('part_name') as string;
-        const partNumberQuery = data.get('part_number') as string;
-        const contractQuery = data.get('contract') as string;
-        if (!partNameQuery && !partNumberQuery && !contractQuery) {
+        const partName = (data.get('part_name') as string) || undefined;
+        const partNumber = (data.get('part_number') as string) || undefined;
+        const contract = (data.get('contract') as string) || undefined;
+        if (!partName && !partNumber && !contract) {
             return {
                 error: 'Please enter at least one search term'
             };
         }
         return {
-            results: await runQuery({
-                partName: partNameQuery ? partNameQuery.split(/\W+/) : [],
-                partNumber: partNumberQuery ? partNumberQuery.split(/\W+/) : [],
-                contract: contractQuery ? contractQuery.split(/\W+/) : []
+            results: await search({
+                partName,
+                partNumber,
+                contract
             })
         };
     }

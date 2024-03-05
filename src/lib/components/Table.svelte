@@ -1,8 +1,12 @@
 <script lang="ts">
-    import type { DatabaseRow } from '$lib/database/DatabaseRow';
+    import type { SearchResult } from '$lib/database/search';
+    import type { Part } from '$lib/database/part';
+
     import Tag from '$lib/components/Tag.svelte';
 
-    export let rows: DatabaseRow[];
+    export let rows: SearchResult[];
+
+    const part = rows[0] as Part;
 </script>
 
 <div
@@ -10,12 +14,12 @@
 >
     <div class="space-y-2">
         <div class="flex flex-row flex-wrap gap-2">
-            <Tag text={rows[0].section} />
+            <Tag text={part.section} />
             >
-            <Tag text={rows[0].subsection} />
+            <Tag text={part.subsection} />
         </div>
-        <p class="text-xl font-semibold">{rows[0].description}</p>
-        <p class="text-sm">Quantity: {rows[0].quantity}</p>
+        <p class="text-xl font-semibold"><a href="/part/{part.id}">{part.description}</a></p>
+        <p class="text-sm">Quantity: {part.quantity}</p>
     </div>
     <div class="divide-y divide-gray-900/5">
         <table class="w-full text-left">

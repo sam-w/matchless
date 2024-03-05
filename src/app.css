@@ -17,3 +17,7 @@ button {
 button:disabled {
     @apply bg-slate-400;
 }
+
+a {
+    @apply underline;
+}
