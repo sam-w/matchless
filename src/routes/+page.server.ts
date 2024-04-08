@@ -1,3 +1,5 @@
+import { fail } from '@sveltejs/kit';
+
 import { search } from '$lib/database/search';
 
 import type { Actions } from './$types';
@@ -9,9 +11,9 @@ export const actions = {
         const partNumber = (data.get('part_number') as string) || undefined;
         const contract = (data.get('contract') as string) || undefined;
         if (!partName && !partNumber && !contract) {
-            return {
+            return fail(400, {
                 error: 'Please enter at least one search term'
-            };
+            });
         }
         return {
             results: await search({

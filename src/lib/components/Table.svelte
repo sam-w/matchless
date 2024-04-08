@@ -18,7 +18,9 @@
             >
             <Tag text={part.subsection} />
         </div>
-        <p class="text-xl font-semibold"><a href="/part/{part.id}">{part.description}</a></p>
+        <p class="text-xl font-semibold">
+            <a href="/part/{part.id}" target="_blank">{part.description}</a>
+        </p>
         <p class="text-sm">Quantity: {part.quantity}</p>
     </div>
     <div class="divide-y divide-gray-900/5">
